@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Responsive campaign workflow page recreated from screenshot using HTML, CSS, and JavaScript."
+    />
+    <title>Advance Campaign</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="mobile-scrim" id="mobileScrim" hidden></div>
+
+    <div class="app">
+      <aside class="sidebar" id="sidebar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <strong>Frontend Task</strong>
+          <button
+            class="icon-button close-nav"
+            id="closeNav"
+            type="button"
+            aria-label="Close sidebar"
+          >
+            x
+          </button>
+        </div>
+
+        <nav class="nav">
+          <a class="nav-link active" href="index.html">
+            <span class="nav-symbol"></span>
+            <span>Campaign</span>
+          </a>
+        </nav>
+
+        <section class="account">
+          <div class="user-row">
+            <span class="avatar">J</span>
+            <div>
+              <strong>John Doe</strong>
+              <small>Admin</small>
+            </div>
+            <button class="icon-button mini" type="button" aria-label="Account settings">o</button>
+          </div>
+          <p>john@theproduct.com</p>
+          <div class="theme-actions" role="group" aria-label="Theme controls">
+            <button class="theme-chip" data-theme-pick="light" type="button">Light</button>
+            <button class="theme-chip" data-theme-pick="dark" type="button">Dark</button>
+          </div>
+        </section>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <button class="icon-button menu" id="openNav" type="button" aria-label="Open sidebar">
+            <span></span><span></span><span></span>
+          </button>
+          <div class="crumbs">
+            <a href="index.html">Campaign</a>
+            <span>/</span>
+            <strong>Advance Campaign</strong>
+          </div>
+          <!-- <div class="top-user">
+            <span>John Doe</span>
+            <span class="avatar small">J</span>
+          </div> -->
+          <div class="user-row">
+            <div>
+              <strong>John Doe</strong>
+              <small>Admin</small>
+            </div>
+            <span class="avatar">J</span>
+          </div>
+        </header>
+
+        <section class="content-shell">
+          <div class="workflow-tabs" aria-label="Campaign workflow">
+            <button class="workflow-tab active" data-tab="target" type="button">
+              <span class="step-icon checklist" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M9 6h10" />
+                  <path d="M9 12h10" />
+                  <path d="M9 18h10" />
+                  <path d="M4 6l1.2 1.2L7.5 4.8" />
+                  <path d="M4 12l1.2 1.2L7.5 10.8" />
+                  <path d="M4 18l1.2 1.2L7.5 16.8" />
+                </svg>
+              </span>
+              <strong>Define Target Audience</strong>
+            </button>
+            <span class="step-arrow" aria-hidden="true"></span>
+            <button class="workflow-tab" data-tab="sender" type="button">
+              <span class="step-icon sender" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" />
+                  <path d="M4 21a8 8 0 0 1 11.5-7.2" />
+                  <path d="M17 15v6" />
+                  <path d="M14 18h6" />
+                </svg>
+              </span>
+              <strong>Sender Profiles</strong>
+            </button>
+            <span class="step-arrow" aria-hidden="true"></span>
+            <button class="workflow-tab" data-tab="settings" type="button">
+              <span class="step-icon gear" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z" />
+                  <path
+                    d="M19.4 15a1.8 1.8 0 0 0 .4 2l.1.1-2 3.4-.2-.1a1.8 1.8 0 0 0-2.1.2l-.4.2-.6 2.2h-4l-.6-2.2-.4-.2a1.8 1.8 0 0 0-2.1-.2l-.2.1-2-3.4.1-.1a1.8 1.8 0 0 0 .4-2l-.2-.4-2.1-.6v-4l2.1-.6.2-.4a1.8 1.8 0 0 0-.4-2l-.1-.1 2-3.4.2.1a1.8 1.8 0 0 0 2.1-.2l.4-.2L10.6 1h4l.6 2.2.4.2a1.8 1.8 0 0 0 2.1.2l.2-.1 2 3.4-.1.1a1.8 1.8 0 0 0-.4 2l.2.4 2.1.6v4l-2.1.6-.2.4Z"
+                  />
+                </svg>
+              </span>
+              <strong>Settings</strong>
+            </button>
+            <span class="step-arrow" aria-hidden="true"></span>
+            <button class="workflow-tab" data-tab="stats" type="button">
+              <span class="step-icon stats" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <rect x="4" y="5" width="16" height="15" rx="3" />
+                  <path d="M8 3v4" />
+                  <path d="M16 3v4" />
+                  <path d="M4 10h16" />
+                  <path d="M8 16h2" />
+                  <path d="M12 14h2" />
+                  <path d="M16 17h2" />
+                </svg>
+              </span>
+              <strong>Stats</strong>
+            </button>
+          </div>
+
+          <section class="builder" aria-label="Campaign builder">
+            <div class="timeline">
+              <span class="timeline-dot complete"></span>
+              <span class="timeline-dot active"></span>
+              <span class="timeline-line"></span>
+            </div>
+
+            <article class="accordion open import-method-panel">
+              <button class="accordion-head" type="button">
+                <span class="status-dot green"></span>
+                <span>Choose Import Method</span>
+                <span class="chevron">^</span>
+              </button>
+              <div class="accordion-body">
+                <div class="method-grid">
+                  <button class="method-card selected" data-method="linkedin" type="button">
+                    <span class="card-icon">in</span>
+                    <strong>LinkedIn Search</strong>
+                    <small>Basic, Sales Nav, Recruiter and Talent URL</small>
+                    <span class="checkmark">✓</span>
+                  </button>
+                  <button class="method-card" data-method="csv" type="button">
+                    <span class="card-icon">up</span>
+                    <strong>Upload CSV File</strong>
+                    <small>Upload lead list for outreach campaign</small>
+                  </button>
+                  <button class="method-card" data-method="lists" type="button">
+                    <span class="card-icon">ll</span>
+                    <strong>Lead Lists</strong>
+                    <small>Use saved filters or lead audience</small>
+                  </button>
+                  <button class="method-card" data-method="webhook" type="button">
+                    <span class="card-icon">io</span>
+                    <strong>Inbound Webhook</strong>
+                    <small>Sync leads from external tools in real time</small>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion stage-panel" data-panel="linkedin">
+              <button class="accordion-head" type="button">
+                <span class="status-dot blue"></span>
+                <span>Paste LinkedIn Search URL</span>
+                <small>Step 1 of 1</small>
+                <span class="chevron">^</span>
+              </button>
+              <div class="accordion-body">
+                <div class="url-box">
+                  <p>
+                    Find your target audience with
+                    <a href="#">LinkedIn Search</a>
+                    or
+                    <a href="#">Sales Navigator</a>
+                    or
+                    <a href="#">Recruiter</a>.
+                  </p>
+                  <div class="url-row">
+                    <input
+                      id="urlInput"
+                      type="url"
+                      value="https://www.linkedin.com/search/results/people/?keywords=Founder"
+                    />
+                    <button class="primary-button" id="validateUrl" type="button">Validate</button>
+                  </div>
+                  <small id="urlStatus">Paste the search URL directly from LinkedIn.</small>
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion stage-panel" data-panel="csv" hidden>
+              <button class="accordion-head" type="button">
+                <span class="status-dot blue"></span>
+                <span>Upload CSV File</span>
+                <small>Step 1 of 1</small>
+                <span class="chevron">^</span>
+              </button>
+              <div class="accordion-body">
+                <label class="drop-zone" id="dropZone">
+                  <input id="csvInput" type="file" accept=".csv" />
+                  <span class="upload-icon">UP</span>
+                  <strong>Drag a file or click to browse</strong>
+                  <small>File with up to 10,000 rows works best</small>
+                </label>
+                <a class="sample-link" href="#" download>Download a sample file</a>
+              </div>
+            </article>
+
+            <article class="accordion map-panel" data-panel="map" hidden>
+              <div class="csv-summary">
+                <!-- <span class="complete-dot">OK</span> -->
+                <strong>Upload CSV file Selected</strong>
+                <small>Step 1 of 2</small>
+                <span class="chevron">^</span>
+              </div>
+
+              <div class="csv-summary">
+                <!-- <span class="complete-dot">OK</span> -->
+                <strong>Upload CSV File</strong>
+                <small>Step 1 of 2</small>
+                <span class="chevron">^</span>
+              </div>
+
+              <div class="map-card">
+                <div class="map-heading">
+                  <div>
+                    <h2>Map Properties</h2>
+                    <p>
+                      <span class="blue-check">OK</span> Make sure file includes contact name and
+                      phone number
+                    </p>
+                  </div>
+                  <button class="danger-button" type="button" aria-label="Delete file">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M3 6h18" />
+                      <path d="M8 6V4h8v2" />
+                      <path d="M19 6l-1 15H6L5 6" />
+                      <path d="M10 11v6" />
+                      <path d="M14 11v6" />
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="mapping-grid">
+                  <section class="mapping-table">
+                    <div class="mapping-header">
+                      <h3>Contact Field</h3>
+                      <h3>CSV Column</h3>
+                    </div>
+                    <div class="mapping-rows">
+                      <span class="field-pill field">Full name</span>
+                      <span class="field-pill csv">Full name <b>(35)</b></span>
+                      <span class="field-pill field">First name</span>
+                      <span class="field-pill csv">First name <b>(3)</b></span>
+                      <span class="field-pill field">Last name</span>
+                      <span class="field-pill csv">Last name <b>(12)</b></span>
+                      <span class="field-pill field">Company Name</span>
+                      <span class="field-pill csv company">Company Name <b>(36)</b></span>
+                      <span class="field-pill field">Position</span>
+                      <span class="field-pill csv position">Position <b>(25)</b></span>
+                      <span class="field-pill field">Headline</span>
+                      <span class="field-pill csv headline">Headline <b>(25)</b></span>
+                    </div>
+                  </section>
+
+                  <aside class="unmapped-card">
+                    <h3>Unmapped Works</h3>
+                    <label class="unmapped-search">
+                      <span></span>
+                      <input type="search" placeholder="Search" />
+                    </label>
+                    <div class="unmapped-list">
+                      <span>Location (9) <b>(3)</b></span>
+                      <span>Industry (3) <b>(3)</b></span>
+                      <span>Notes (9) <b>(9)</b></span>
+                    </div>
+                    <button class="clear-button" type="button">Clear All Matched</button>
+                  </aside>
+                </div>
+              </div>
+            </article>
+
+            <!-- <article class="accordion stage-panel" data-panel="lists" hidden>
+              <button class="accordion-head" type="button">
+                <span class="status-dot blue"></span>
+                <span>Select Lead List</span>
+                <small>Step 1 of 1</small>
+                <span class="chevron">^</span>
+              </button>
+              <div class="accordion-body">
+                <div class="lead-list">
+                  <button class="lead-option active" type="button">
+                    <strong>Founder Search</strong>
+                    <small>1,000 contacts</small>
+                  </button>
+                  <button class="lead-option" type="button">
+                    <strong>Sales Navigator Leads</strong>
+                    <small>750 contacts</small>
+                  </button>
+                  <button class="lead-option" type="button">
+                    <strong>Recently Uploaded CSV</strong>
+                    <small>620 contacts</small>
+                  </button>
+                </div>
+              </div>
+            </article> -->
+          </section>
+
+          <section class="sender-screen" id="senderScreen" aria-label="Sender profiles" hidden>
+            <div class="sender-tabs" role="tablist" aria-label="Sender profile type">
+              <button class="sender-tab active" type="button" role="tab" aria-selected="true">
+                LinkedIn Profile
+              </button>
+              <button class="sender-tab" type="button" role="tab" aria-selected="false">
+                Email Accounts
+              </button>
+            </div>
+
+            <section class="profile-card">
+              <header class="profile-head">
+                <div>
+                  <h2>
+                    <span class="linkedin-badge" aria-hidden="true">in</span> LinkedIn Profile
+                  </h2>
+                  <p>Pick which LinkedIn profiles you want to use for this campaign.</p>
+                </div>
+                <button class="add-account-button" type="button">+ Add Account</button>
+              </header>
+
+              <div class="profile-toolbar">
+                <label class="show-control">
+                  <span>Show</span>
+                  <select aria-label="Rows per page">
+                    <option>10</option>
+                  </select>
+                </label>
+                <label class="profile-search">
+                  <span aria-hidden="true"></span>
+                  <input type="search" placeholder="Search" />
+                </label>
+              </div>
+
+              <div class="profile-table" role="table" aria-label="LinkedIn profiles">
+                <div class="profile-row profile-row-head" role="row">
+                  <span class="checkbox-cell" role="columnheader"
+                    ><input type="checkbox" aria-label="Select all profiles"
+                  /></span>
+                  <span role="columnheader">Name</span>
+                  <span role="columnheader">Health</span>
+                  <span role="columnheader">Daily Limits</span>
+                  <span role="columnheader">Account Type</span>
+                  <span role="columnheader">Status</span>
+                </div>
+                <div class="profile-row" role="row">
+                  <span class="checkbox-cell" role="cell"
+                    ><input type="checkbox" aria-label="Select Edgar Jones"
+                  /></span>
+                  <span class="profile-name-cell" role="cell">
+                    <img
+                      class="profile-avatar"
+                      src="https://i.pravatar.cc/80?img=12"
+                      alt="Edgar Jones"
+                    />
+                    <span>
+                      <strong>Edgar Jones</strong>
+                      <small>1,250 connections</small>
+                    </span>
+                  </span>
+                  <span class="health-cell" role="cell"><span class="health-ring">72</span></span>
+                  <span role="cell"><span class="limit-pill">Invites: 40 / day</span></span>
+                  <span class="account-type-cell" role="cell"
+                    ><span class="linkedin-square">in</span> Premium</span
+                  >
+                  <span role="cell"><span class="status-pill">Connected</span></span>
+                </div>
+              </div>
+            </section>
+          </section>
+        </section>
+
+        <div class="footer-actions">
+          <button class="previous-button" id="previousButton" type="button" hidden>Previous</button>
+          <button class="next-button" id="nextButton" type="button">Next</button>
+          <a href="index.html" class="submit-button" id="submitButton" type="button" hidden>
+            Submit
+          </a>
+        </div>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="lookalikeModal" hidden>
+      <section
+        class="lookalike-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="lookalikeTitle"
+      >
+        <header class="modal-head">
+          <div>
+            <h2 id="lookalikeTitle">Lookalikes</h2>
+            <p>Select a lookalike list for this campaign</p>
+          </div>
+          <button
+            class="modal-close"
+            id="closeLookalikeModal"
+            type="button"
+            aria-label="Close modal"
+          >
+            x
+          </button>
+        </header>
+        <div class="modal-empty">
+          <h3>You don't have any leads</h3>
+          <p>Create a lead list to start running campaigns</p>
+          <button class="primary-button modal-action" id="createLeadList" type="button">
+            Create a List
+          </button>
+        </div>
+        <div class="modal-list-state" id="lookalikeListState" hidden>
+          <div class="lookalike-options" role="radiogroup" aria-label="Lookalike lists">
+            <button
+              class="lookalike-option selected"
+              type="button"
+              aria-checked="true"
+              role="radio"
+            >
+              <span class="list-icon" aria-hidden="true"></span>
+              <strong>Founder</strong>
+              <span>(1000+ Users in the List)</span>
+              <span class="list-check" aria-hidden="true"></span>
+            </button>
+            <button class="lookalike-option" type="button" aria-checked="false" role="radio">
+              <span class="list-icon" aria-hidden="true"></span>
+              <strong>Tech Profiles</strong>
+              <span>(1000+ Users in the List)</span>
+              <span class="list-check" aria-hidden="true"></span>
+            </button>
+          </div>
+          <button class="add-new-list" type="button">Add New</button>
+          <footer class="modal-actions">
+            <button class="secondary-button" id="cancelLookalikeList" type="button">Cancel</button>
+            <button
+              class="primary-button select-list-button"
+              id="selectLookalikeList"
+              type="button"
+            >
+              Select List
+            </button>
+          </footer>
+        </div>
+      </section>
+    </div>
+
+    <div class="toast" id="toast" hidden>Validated successfully</div>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
