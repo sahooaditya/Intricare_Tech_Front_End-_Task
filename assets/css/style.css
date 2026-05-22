@@ -1779,7 +1779,7 @@ input:focus {
 
   .footer-actions {
     position: static;
-    justify-content: flex-end;
+    justify-content: center;
     margin-top: 22px;
     padding-right: 0;
   }
