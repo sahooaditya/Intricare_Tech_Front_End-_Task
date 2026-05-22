@@ -448,7 +448,8 @@ html[data-theme="dark"] .step-arrow {
 
 .method-card {
   position: relative;
-  min-height: 120px;
+  min-height: 148px;
+  width: 186px;
   border: 1px solid var(--line);
   border-radius: 4px;
   background: var(--panel-blue);
@@ -470,6 +471,11 @@ html[data-theme="dark"] .step-arrow {
   color: var(--primary);
   font-size: 7px;
   font-weight: 700;
+}
+
+img.card-icon {
+  display: block;
+  object-fit: contain;
 }
 
 .method-card strong {
